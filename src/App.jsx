@@ -9,7 +9,10 @@ import {
   SinglePageError,
 } from './pages';
 
-import { loader as landingLoader } from './pages/Landing'
+// Typically, the loader function is invoked automatically by the routing library when the corresponding route is accessed
+import { loader as landingLoader } from './pages/Landing';
+import { loader as singleCocktailLoader } from './pages/Cocktail'
+
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'cocktail/:id',
+        errorElement:<SinglePageError/>,
+        loader: singleCocktailLoader,
         element: <Cocktail />,
       },
       {
