@@ -11,7 +11,8 @@ import {
 
 // Typically, the loader function is invoked automatically by the routing library when the corresponding route is accessed
 import { loader as landingLoader } from './pages/Landing';
-import { loader as singleCocktailLoader } from './pages/Cocktail'
+import { loader as singleCocktailLoader } from './pages/Cocktail';
+import { action as newsletterAction} from './pages/Newsletter'
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       {
         path: 'newsletter',
         element: <Newsletter />,
+        action: newsletterAction,
       },
       {
         path: 'about',
